@@ -1,0 +1,518 @@
+[[$head]]
+
+<!-- Page Title
+    ============================================= -->
+<section id="page-title" class="page-title-dark" style="background: url('[[++site_url]]assets/images/parallax/blue_ocean.jpg') top center; background-size:cover;">
+
+    <div class="container clearfix">
+        <h1>[[*longtitle:default=`[[*pagetitle]]`:htmlent]]</h1>
+        <span>[[*description]]</span>
+        [[BreadCrumb?containerTpl=`bcContainerTpl`]]
+    </div>
+
+</section><!-- #page-title end -->
+
+<!-- Content
+    ============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        [[*content]]
+        <div class="container clearfix">
+            <div class="top-cart-content" id="cart-items">
+                <div class="top-cart-title">
+                    <h4>Shopping Cart</h4>
+                </div>
+                <div class="top-cart-items simpleCart_items"> </div>
+
+                <div class="top-cart-action clearfix">
+                    <span class=" fright top-checkout-price simpleCart_grandTotal">$114.95</span>
+                </div>
+
+                <div class="top-cart-action clearfix">
+                    <button class="button fright button-3d button-small nomargin  checkout_button" type="button">Checkout</button>
+                </div>
+
+                <input type="hidden" name="order_details" value="">
+                <input type="hidden" name="total_amount" value="">
+            </div>
+            <div id="login-info" style="display: none">
+                <form id="login-form" name="login-form" action="" mehtod="post">
+                    <h3>Enter Your Email Address To Get Started  </h3>
+                    <div class="col_full">
+                        <span class="errors" id="login-error"></span>
+                    </div>
+                    <div class="col_full">
+                        <label style="width: 100%">
+                            <span>Email Address</span>
+                            <input type="text" name="username" id="username" required="required" placeholder="you@yourdomain.com" class="sm-form-control" style="width: 100%"/>
+
+                            <span class="email-check-error"></span>
+                        </label>
+                        <label style="width: 100%; display: none" id="lblpasswd">
+                            <span>Password</span>
+                            <input type="text" name="password" id="password" required="required" placeholder="********" class="sm-form-control"/>
+                            <span class="forgot-password-link"><a href="#">Forgot Your Password?</a> Click <a href="#">here</a> to reset it</span>
+                        </label>
+                        <div class="clearfix"></div>
+                        <button class="button fright button-3d button-small nomargin  checkemail-step" type="button">Continue</button>
+                        <button class="button fright button-3d button-small nomargin  login-step" type="submit" style="display: none">Login</button>
+                    </div>
+                    <div class="col_half col_last" style="display: none">
+                        <button class="button  fleft button-3d button-small margintop  checkout-guest" type="button">Or Checkout as Guest</button>
+                    </div>
+
+
+                    <div class="margintop clearfix" style="margin-top: 20px;display: none">
+                        Not Registered?
+                        <a href="#" id="create_account_trigger">
+                            Create an account
+                        </a> here
+                    </div>
+                </form>
+            </div>
+            <div id="user-info" style="display: none;">
+                <form id="userinfo-form" name="userinfo-form" action="" mehtod="post">
+                    <h3> Account Info </h3>
+                    <div class="col_full">
+                        <span class="errors" id="userinfo-error"></span>
+                    </div>
+                    <div class="col_half">
+                        <label>
+                            <span>First Name</span>
+                            <input type="text" name="firstname" id="firstname" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+                    <div class="col_half col_last">
+                        <label>
+                            <span>Last Name</span>
+                            <input type="text" name="lastname" id="lastname" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+                    <div class="col_half">
+                        <label>
+                            <span>Email Address</span>
+                            <input type="email" name="email" id="email" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+                    <div class="col_half col_last">
+                        <label>
+                            <span>Address 1</span>
+                            <input type="text" name="address1" id="address1" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+                    <div class="col_half">
+                        <label>
+                            <span>Address 2</span>
+                            <input type="text" name="address2" id="address2" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+                    <div class="col_half col_last">
+                        <label>
+                            <span>City</span>
+                            <input type="text" name="city" id="city" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+                    <div class="col_half">
+                        <label>
+                            <span>Zipcode</span>
+                            <input type="text" name="zip" id="zip" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+
+                    <div class="col_half col_last">
+                        <label>
+                            <span>Country</span>
+                            <input type="text" name="country" id="country" required="required" class="sm-form-control"/>
+                        </label>
+                    </div>
+
+                    <div class="top-cart-action clearfix">
+                        <button class="button fleft button-3d button-small nomargin  backtologin" type="button">Back</button>
+                        <button class="button fright button-3d button-small nomargin  continue-step2">Continue</button>
+                    </div>
+                </form>
+            </div>
+
+            [[!FormIt?&hooks=`email,FormSave,Redirect` &emailTpl=`order_email_to_admin_tpl` &emailTo=`jared@jaredloman.com,[[+CustomerEmail]]` &emailSubject=`Order Confirmation From Winery For Order ID: [[+stripeToken]]` &fsFormTopic=`Orders` &validate=`shipping_firstname:required,shipping_lastname:required,shipping_country:required:stripTags`&redirectTo=`59` ]]
+            <form id="payment-form" name="payment-form" action="" method="post">
+                <div id="billing-shipping" style="display: none">
+                    <div class="col_half">
+                        <div id="billing-info" style="">
+                            <h3> Billing Info </h3>
+                            <div class="col_full">
+                                <label>
+                                    <span>Subscribe to our newsletter</span>
+                                    <input type="checkbox" name="subscribe" id="subscribe" class="" value="1"/>
+                                </label>
+                            </div>
+                            <div class="col_full">
+                                <label>
+                                    <span>First Name</span>
+                                    <input type="text" name="billing_firstname" id="billing_firstname" required="required" class="sm-form-control" value="[[!getBillingInfo?field=`firstname`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col_full">
+                                <label>
+                                    <span>Last Name</span>
+                                    <input type="text" name="billing_lastname" id="billing_lastname" required="required" class="sm-form-control field-error" value="[[!getBillingInfo?field=`lastname`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Email Address</span>
+                                    <input type="email" name="billing_email" id="billing_email" required="required" class="sm-form-control" value="[[!getBillingInfo?field=`email`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Address 1</span>
+                                    <input type="text" name="billing_address1" id="billing_address1" required="required" class="sm-form-control" value="[[!getBillingInfo?field=`address1`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Address 2</span>
+                                    <input type="text" name="billing_address2" id="billing_address2" class="sm-form-control" value="[[!getBillingInfo?field=`address2`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col_full">
+                                <label>
+                                    <span>Phone</span>
+                                    <input type="text" name="billing_phone" id="billing_phone" required="required" class="sm-form-control" value="[[!getBillingInfo?field=`phone`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Zipcode</span>
+                                    <input type="text" name="billing_zip" id="billing_zip" required="required" class="sm-form-control" value="[[!getBillingInfo?field=`zip`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>City</span>
+                                    <input type="text" name="billing_city" id="billing_city" required="required" class="sm-form-control" value="[[!getBillingInfo?field=`city`]]"/>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>State</span>
+                                    <select name="billing_state" id="billing_state" class="sm-form-control">
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    <div class="viewonly" style="display:none">
+
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="edit-billing" style="display: none">
+                                <a href="javascript;" id="edit-billing-trigger">Edit</a>
+                            </div>
+
+                            <div class="top-cart-action clearfix" style="display: none">
+                                <button class="button fleft button-3d button-small nomargin backtologin" type="button">Back</button>
+                                <button class="button fright button-3d button-small nomargin continue-to-shipping" type="button" step="1">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col_half col_last">
+                        <div id="shipping-info" style="">
+                            <h3> Shipping Info </h3>
+                            <div class="col_full copy_billing_info">
+                                <label>
+                                    <span>Same As Billing Info</span>
+                                    <input type="checkbox" name="billing_copyinfo" id="billing_copyinfo" class=""/>
+                                </label>
+                            </div>
+
+                            <div class="col_full copy_account_info" style="display: none">
+                                <label>
+                                    <span>Same As Account Info</span>
+                                    <input type="checkbox" name="account_copyinfo" id="account_copyinfo" class=""/>
+                                </label>
+                            </div>
+                            <div class="col_full">
+                                <label>
+                                    <span>First Name</span>
+                                    <input type="text" name="shipping_firstname" id="shipping_firstname" required="required" class="sm-form-control"/>
+
+                                </label>
+                            </div>
+                            <div class="col_full">
+                                <label>
+                                    <span>Last Name</span>
+                                    <input type="text" name="shipping_lastname" id="shipping_lastname" required="required" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Address 1</span>
+                                    <input type="text" name="shipping_address1" id="shipping_address1" data-stripe="address1" required="required" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Address 2</span>
+                                    <input type="text" name="shipping_address2" id="shipping_address2" data-stripe="address2" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+                            <div class="col_full ">
+                                <label>
+                                    <span>Phone</span>
+                                    <input type="text" name="shipping_phone" id="shipping_phone" required="required" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+                            <div class="col_full ">
+                                <label>
+                                    <span>City</span>
+                                    <input type="text" name="shipping_city" id="shipping_city" required="required" data-stripe="city" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+                            <div class="col_full ">
+                                <label>
+                                    <span>Zipcode</span>
+                                    <input type="text" name="shipping_zip" id="shipping_zip" required="required" data-stripe="zip" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>State</span>
+                                    <select name="shipping_state" id="shipping_state" class="sm-form-control">
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="col_full">
+                                <label>
+                                    <span>Country</span>
+                                    <input type="tel" name="shipping_country" id="shipping_country" required="required" data-stripe="country" class="sm-form-control"/>
+                                </label>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="top-cart-action clearfix">
+                        <button class="button fleft button-3d button-small nomargin backtoaccount" type="button">Back</button>
+                        <button class="button fright button-3d button-small nomargin continue-step3" type="button">Continue</button>
+                    </div>
+                </div>
+
+
+
+                <div id="payment-info" style="display: none;">
+                    <h3>Order Details </h3>
+
+                    <div class="col_full">
+                        <div class="top-cart-items simpleCart_itemsClone" id="OrderedItems"> </div>
+                        <div class="top-cart-action clearfix">
+<span class=" fleft top-checkout-price ">Shipping
+<select name="shipping-rate-option" id="shipping-rate-option" style="display: none">
+
+</select>
+
+</span>
+
+                        </div>
+
+                        <div class="top-cart-action clearfix">
+                            <span class="fright top-checkout-price simpleCart_shippingRate">$0</span>
+                            <span class="fright top-checkout-price ">Shipping&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+
+                        <div class="top-cart-action clearfix">
+                            <span class="fright top-checkout-price simpleCart_Tax_Total">$0</span>
+                            <span class="fright top-checkout-price ">Tax&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+
+
+                        <div class="top-cart-action clearfix">
+                            <span class=" fright top-checkout-price simpleCart_grandTotalWithShipping">$114.95</span>
+                            <span class="fright top-checkout-price ">Grand Total&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                        <input type="hidden" name="TotalAmount" id="TotalAmount" value=""/>
+                        <input type="hidden" name="CustomerEmail" id="CustomerEmail" value="[[!getBillingInfo?field=`email`]]"/>
+
+                    </div>
+
+                    <div class="col_half">
+                        <img src="/assets/uploads/stripe.png"/>
+                    </div>
+                    <div class="col_half col_last">
+                        <h3>Payment Details </h3>
+                        <div class="payment-errors"></div>
+                        <label>
+                            <input required="required" class="sm-form-control payment-field-full" placeholder="Card Holder Name" maxlength="70" data-stripe="name" name="cardholdername" type="text">
+                            <input required="required" class="sm-form-control payment-field-full" data-stripe="number" size="20" type="text" placeholder="Card Number">
+                            <input required="required" data-stripe="exp-month" size="2" type="text" placeholder="MM" class="payment-field"> <input required="required" data-stripe="exp-year" size="4" type="text" placeholder="YY" class="payment-field"><input required="required" data-stripe="cvc" size="16" type="text" placeholder="CVC" class="payment-field">
+
+
+                        </label>
+                    </div>
+
+                    <div class="col_full"></div>
+
+                    <div class="top-cart-action clearfix">
+                        <button class="button fleft button-3d button-small nomargin backtoshipping" type="button">Back</button>
+                        <button class="button fright button-3d button-small nomargin checkout-final">Pay and Confirm</button>
+                    </div>
+
+                </div></form>
+
+
+            <div class="payment-success" style="display: none">
+                <h3>Thank you for purchasing with us. Redirecting to order details page. Please wait a while....</h3>
+            </div>
+            <input type="hidden" name="step" id="step" value="1"/>
+
+        </div>
+
+    </div>
+</section><!-- #content end -->
+
+[[$foot]]
