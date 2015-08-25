@@ -193,9 +193,8 @@
 
 
 ?>
-        <script type="text/javascript" src="http://cdn.ihwy.net/ihwy-com/assets/js/lib/jquery-1.3.2.min.js"></script>
-        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.listnav-2.1.js"></script>
-        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/js/jquery-listnav.min.js"></script>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ?>/js/vendor.js"></script>
 
         <script type="text/javascript">
 
@@ -214,6 +213,7 @@
             });
 
         </script>
+
 <a href='#top' title='<?php _e('Scroll to top','avia_framework'); ?>' id='scroll-top-link' <?php echo av_icon_string( 'scrolltop' ); ?>><span class="avia_hidden_link_text"><?php _e('Scroll to top','avia_framework'); ?></span></a>
 
 <div id="fb-root"></div>

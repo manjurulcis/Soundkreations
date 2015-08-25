@@ -1,43 +1,34 @@
-﻿jQuery(document).ready(function ($) {
-    if ($(".notification").length !== 0) {
-        setTimeout(function () {
-            var height = $(".notification").css("height", "auto").height();
-            $(".notification").css("height", "0").animate({ 'height': (height + 30) + "px", 'padding': '15px 2%' }, 500);
-            if ($("#wpadminbar").length > 0) {
-                $(".notification").css("top", $("#wpadminbar").height() + "px");
-            }
-            
-            // note - variables intentionally left seperate to distinguish between "natural" top and padding top
-            if ($(".home").length > 0) {
-                $("#header").animate({ "top": (height + 30 + 25) + "px" }, 500);
-            }
-            // compensate for notification bar
-            $("#wrap_all").animate({ "margin-top": (height + 29) + "px" }, 500);
-        }, 500);
+$('ul.tabs').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and it's associated content
+    var $active, $content, $links = $(this).find('a');
 
-        $(".notification").on("click", function () {
-            $(".notification").animate({ 'height': '0', 'padding': '0 2%' }, 500);
-            $("#wrap_all").animate({ "margin-top": "0" });
-            if ($(".home").length > 0) {
-                $("#header").animate({ "top": "25px" }, 500);
-                $(".header-questions").animate({ "top": "-25px" }, 500);
-            }
-        });
-    }
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+    $active.parent("li").addClass('active');
+    $content = $($active.attr('href'));
 
-    $("#top #footer .gform_wrapper .gfield").each(function () {
-        var html = $("label", this).html();
-        $("#" + $("label", this).attr("for")).attr("placeholder", html);
+    // Hide the remaining content
+    $links.not($active).each(function () {
+        $($(this).attr('href')).hide();
     });
-    $("#top #footer .gform_wrapper .gform_footer .gform_button").attr("value", "Submit your Message");
 
-    if ($(".home").length > 0) {
-        var length = $("#top #header .main_menu .menu .menu-item").length;
-        $("#top #header .main_menu .menu .menu-item-top-level").each(function (index) {
-            console.log(index);
-            if (index == 3) {
-                $(this).addClass("marginleft");
-            }
-        });
-    }
+    // Bind the click event handler
+    $("a", this).click(function(e){
+        // Make the old tab inactive.
+        $active.parent("li").removeClass('active');
+        $content.hide();
+
+        // Update the variables with the new link and content
+        $active = $(this);
+        $content = $($(this).attr('href'));
+
+        // Make the tab active.
+        $active.parent("li").addClass('active');
+        $content.show();
+
+        // Prevent the anchor's default click action
+        e.preventDefault();
+    });
 });
