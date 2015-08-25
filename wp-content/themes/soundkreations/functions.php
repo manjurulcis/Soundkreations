@@ -146,3 +146,14 @@ function programlist($atts)
 }
 
 add_shortcode('programlist','programlist');
+
+/* Build Your Program Shortcode*/
+
+add_shortcode('build-your-program','build_your_program');
+
+function build_your_program($atts){
+    extract(shortcode_atts(array('taxnomy_type'=>'all','term_ids'=>'all','readmorelink'=>'','readmoretext'=>''), $atts));
+    ob_start();
+
+
+}
