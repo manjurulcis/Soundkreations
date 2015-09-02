@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="698548dd-20f7-49f0-a955-dbb50c512c8d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/soundkreations/wpe/js/jquery.easing.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/soundkreations/header.php" afterPath="$PROJECT_DIR$/wp-content/themes/soundkreations/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/soundkreations/wpe/css/lfb_forms.css" afterPath="$PROJECT_DIR$/wp-content/themes/soundkreations/wpe/css/lfb_forms.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="82433455-cad7-453c-b1e1-416f856fbbf8" name="Failed commit: Default" comment="css changes" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58966565">
-              <caret line="200" column="9" selection-start-line="200" selection-start-column="9" selection-end-line="200" selection-end-column="9" />
+            <state vertical-scroll-proportion="-0.19452888">
+              <caret line="290" column="21" selection-start-line="290" selection-start-column="19" selection-end-line="290" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -186,6 +183,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
@@ -496,11 +496,17 @@
       <option name="project" value="LOCAL" />
       <updated>1441051520833</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="form step done">
+      <created>1441063459068</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1441063459068</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="2582" height="1562" extended-state="6" />
+    <frame x="-11" y="-11" width="2582" height="1562" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -544,7 +550,8 @@
     <MESSAGE value="CSS Changes" />
     <MESSAGE value="Test commmt" />
     <MESSAGE value="Test commmt delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test commmt delete" />
+    <MESSAGE value="form step done" />
+    <option name="LAST_COMMIT_MESSAGE" value="form step done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -965,14 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions - Copy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.538462">
-          <caret line="168" column="132" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="132" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/wpe/js/jquery.easing.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -981,10 +980,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions - Copy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.538462">
+          <caret line="168" column="132" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58966565">
-          <caret line="200" column="9" selection-start-line="200" selection-start-column="9" selection-end-line="200" selection-end-column="9" />
+        <state vertical-scroll-proportion="-0.19452888">
+          <caret line="290" column="21" selection-start-line="290" selection-start-column="19" selection-end-line="290" selection-end-column="21" />
           <folding />
         </state>
       </provider>

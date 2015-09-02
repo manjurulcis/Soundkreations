@@ -157,7 +157,7 @@ function build_your_program($atts)
 
         /*form styles*/
         #msform {
-            height: 500px;;
+            height: 550px;;
             width: 1180px;
             margin: 50px auto;
             text-align: center;
@@ -196,9 +196,6 @@ function build_your_program($atts)
             color: #2C3E50;
             font-size: 13px;
         }
-        #msform p{
-
-        }
 
         /*buttons*/
         #msform .action-button {
@@ -219,17 +216,18 @@ function build_your_program($atts)
 
         /*headings*/
         .fs-title {
-            font-size: 15px;
-            text-transform: uppercase;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .fs-subtitle {
             font-weight: normal;
             font-size: 13px;
             color: #666;
             margin-bottom: 20px;
+
+        }
+
+        .fs-subtitle {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #333;
+            margin-bottom: 30px;
         }
 
         /*progressbar*/
@@ -242,10 +240,10 @@ function build_your_program($atts)
 
         #progressbar li {
             list-style-type: none;
-            color: white;
+            color: black;
             text-transform: uppercase;
             font-size: 9px;
-            width: 30%;
+            width: 14.2%;
             float: left;
             position: relative;
         }
@@ -287,6 +285,19 @@ function build_your_program($atts)
             color: white;
         }
 
+        .field-form label{
+            color: black;
+            display: block;
+            width: 70px;
+            float: left;
+
+        }
+
+        .field-form{
+            margin-bottom: 10px;
+        }
+
+
 
     </style>
 
@@ -303,37 +314,68 @@ function build_your_program($atts)
         </ul>
         <!-- fieldsets -->
         <fieldset>
-            <h2 class="fs-title">Step 1</h2>
+            <span class="fs-title">Step 1</span>
+            <h2 class="fs-subtitle">Tell us about yourself</h2>
 
-            <h3 class="fs-subtitle">Tell us about yourself</h3>
-            <input type="text" name="firstname" placeholder="First Name" required/>
-            <input type="text" name="lastname" placeholder="Last Name" required/>
-            <input type="email" name="emailad" placeholder="Email Address" required/>
-            <input type="text" name="postcode" maxlength="5" placeholder="Post Code" required />
-            <p>Past SK Client?</p>
-            <ul>
-                <li><input type="radio" required/> Yes </li>
-                <li><input type="radio" required/> NO </li>
-                <li><input type="radio" required/> I don't know </li>
-            </ul>
-
-
+            <div class="field-form"><label for="firstname">First Name: </label><input type="text" id="firstname" name="firstname" placeholder="First Name" required/></div>
+            <div class="field-form"><label for="lastname">Last Name</label><input type="text" id="lastname" name="lastname" placeholder="Last Name" required/></div>
+            <div class="field-form"><label for="emailad">Email Address</label><input type="email" id="emailad" name="emailad" placeholder="Email Address" required/></div>
+            <div class="field-form"><label for="postcode">Post Code</label><input type="text" name="postcode" maxlength="5" placeholder="Post Code" required /></div>
+            <div class="field-form"><label for="pastclient">Past SK Client?</label>
+                <ul class="radio-input">
+                    <li><label><input type="radio" value="yes"/>Yes</label></li>
+                    <li><label><input type="radio" value="no" />No</label></li>
+                    <li><label><input type="radio" value="I don't know"/>I don't know</label> </li>
+                </ul>
+            </div>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
         <fieldset>
-            <h2 class="fs-title">Social Profiles</h2>
-
-            <h3 class="fs-subtitle">Your presence on the social network</h3>
-            <input type="text" name="twitter" placeholder="Twitter"/>
-            <input type="text" name="facebook" placeholder="Facebook"/>
-            <input type="text" name="gplus" placeholder="Google Plus"/>
+            <h3 class="fs-title">Step 2</h3>
+            <h2 class="fs-subtitle">What type of Program are you interested in?</h2>
+            <select>
+                <optgroup label="Calgary Area ">
+                    <option value="">Hip?Hop Dance</option>
+                    <option value="">Step Dance</option>
+                    <option value="">West African Dance</option>
+                    <option value="">Around the World Dance 1</option>
+                    <option value="">Around the World Dance 2</option>
+                    <option value="">Beat Street Dance</option>
+                    <option value="">Zumba</option>
+                    <option value="">Bollywood Dance</option>
+                    <option value="">Latin Dance</option>
+                    <option value="">Yoga</option>
+                    <option value="">Slam Poetry</option>
+                </optgroup>
+                <optgroup label="Edmonton Area">
+                    <option value="">Hip?Hop Dance</option>
+                    <option value="">The California Program (Popping, Locking, Animation)</option>
+                    <option value="">The New York Program (House, Breaking)</option>
+                    <option value="">The Jamaica Program (Dancehall)</option>
+                    <option value="">The India Program</option>
+                    <option value="">Around the World (Dancehall, House, Locking)</option>
+                </optgroup>
+                <optgroup label="Other">
+                    <option value="">Hip-Hop Dance</option>
+                    <option value="">Step Dance</option>
+                    <option value="">West African Dance</option>
+                    <option value="">Around the World Dance 1</option>
+                    <option value="">Around the World Dance 2</option>
+                    <option value="">Beat Street Dance</option>
+                    <option value="">Zumba</option>
+                    <option value="">Bollywood Dance</option>
+                    <option value="">Latin Dance</option>
+                    <option value="">Yoga</option>
+                    <option value="">Slam Poetry</option>
+                </optgroup>
+            </select>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
         <fieldset>
-            <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-title">Step 3</h3>
 
-            <h3 class="fs-subtitle">We will never sell it</h3>
+            <h2 class="fs-subtitle">What program format are you interested in?</h2>
             <input type="text" name="fname" placeholder="First Name"/>
             <input type="text" name="lname" placeholder="Last Name"/>
             <input type="text" name="phone" placeholder="Phone"/>
