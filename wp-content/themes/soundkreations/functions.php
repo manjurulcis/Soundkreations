@@ -179,6 +179,8 @@ function build_your_program($atts)
             position: absolute;
         }
 
+
+
         /*Hide all except first fieldset*/
         #msform fieldset:not(:first-of-type) {
             display: none;
@@ -190,7 +192,7 @@ function build_your_program($atts)
             border: 1px solid #ccc;
             border-radius: 3px;
             margin-bottom: 10px;
-            width: 100%;
+            width: 75%;
             box-sizing: border-box;
             font-family: montserrat;
             color: #2C3E50;
@@ -213,6 +215,11 @@ function build_your_program($atts)
         #msform .action-button:hover, #msform .action-button:focus {
             box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
         }
+
+        #msform fieldset .field-form input {
+            width: 100%;
+        }
+
 
         /*headings*/
         .fs-title {
@@ -285,17 +292,34 @@ function build_your_program($atts)
             color: white;
         }
 
-        .field-form label{
+        .field-form label {
             color: black;
             display: block;
-            width: 70px;
-            float: left;
-
         }
 
-        .field-form{
-            margin-bottom: 10px;
+        .field-form {
+            margin: 0 auto 10px;
+            text-align: center;
+            width: 70%;
         }
+
+        .radio-input table {
+            border: none;
+            width: 300px;
+
+        }
+        .radio-input label{
+            text-align: left;
+        }
+
+        .radio-input input{
+            margin: 0 auto;
+        }
+
+        .radio-input td{
+            width:100%;
+        }
+
 
 
 
@@ -315,23 +339,35 @@ function build_your_program($atts)
         <!-- fieldsets -->
         <fieldset>
             <span class="fs-title">Step 1</span>
+
             <h2 class="fs-subtitle">Tell us about yourself</h2>
 
-            <div class="field-form"><label for="firstname">First Name: </label><input type="text" id="firstname" name="firstname" placeholder="First Name" required/></div>
-            <div class="field-form"><label for="lastname">Last Name</label><input type="text" id="lastname" name="lastname" placeholder="Last Name" required/></div>
-            <div class="field-form"><label for="emailad">Email Address</label><input type="email" id="emailad" name="emailad" placeholder="Email Address" required/></div>
-            <div class="field-form"><label for="postcode">Post Code</label><input type="text" name="postcode" maxlength="5" placeholder="Post Code" required /></div>
-            <div class="field-form"><label for="pastclient">Past SK Client?</label>
-                <ul class="radio-input">
-                    <li><label><input type="radio" value="yes"/>Yes</label></li>
-                    <li><label><input type="radio" value="no" />No</label></li>
-                    <li><label><input type="radio" value="I don't know"/>I don't know</label> </li>
-                </ul>
+            <div class="field-form"><input type="text" id="firstname" name="firstname" placeholder="First Name"
+                                           required/></div>
+            <div class="field-form"><input type="text" id="lastname" name="lastname" placeholder="Last Name" required/>
+            </div>
+            <div class="field-form"><input type="email" id="emailad" name="emailad" placeholder="Email Address"
+                                           required/></div>
+            <div class="field-form"><input type="text" name="postcode" maxlength="5" placeholder="Post Code" required/>
+            </div>
+            <div class="field-form radio-input"><label for="pastclient">Past SK Client?</label>
+
+                <div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                        <label>Yes</label><input type="radio" name="pastclient" value="yes" checked></>
+                        <td><label>No</label><input type="radio" name="pastclient" value="no"></td>
+                        <td><label>I don't know</label><input type="radio" name="pastclient" value="I don't know"></td>
+                    </tr>
+                </table>
             </div>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
         <fieldset>
             <h3 class="fs-title">Step 2</h3>
+
             <h2 class="fs-subtitle">What type of Program are you interested in?</h2>
             <select>
                 <optgroup label="Calgary Area ">
@@ -376,12 +412,35 @@ function build_your_program($atts)
             <h3 class="fs-title">Step 3</h3>
 
             <h2 class="fs-subtitle">What program format are you interested in?</h2>
+
+            <div class="field-form">
+                <label for="programselection">
+                    Number of students in largest class/class combination
+                </label>
+                <select required>
+                    <option selected>1-45 students</option>
+                    <option>46-55 students</option>
+                    <option>56-65 students</option>
+                    <option>66-75 students</option>
+                </select>
+            </div>
+            <div class="field-form">
+                <label for="instructorselection">
+                    Number of students in largest class/class combination
+                </label>
+                <select required>
+                    <option selected>1</option>
+                    <option>2 (additional charge of $375/day)</option>
+                </select>
+            </div>
+
+
             <input type="text" name="fname" placeholder="First Name"/>
             <input type="text" name="lname" placeholder="Last Name"/>
             <input type="text" name="phone" placeholder="Phone"/>
             <textarea name="address" placeholder="Address"></textarea>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
-            <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
         <fieldset>
             <h2 class="fs-title">Social Profiles</h2>
@@ -390,6 +449,31 @@ function build_your_program($atts)
             <input type="text" name="twitter" placeholder="Twitter"/>
             <input type="text" name="facebook" placeholder="Facebook"/>
             <input type="text" name="gplus" placeholder="Google Plus"/>
+            <input type="button" name="previous" class="previous action-button" value="Previous"/>
+            <input type="button" name="next" class="next action-button" value="Next"/>
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Step 5</h2>
+
+            <h3 class="fs-subtitle">School Info Section</h3>
+
+            <div class="field-form"><label for="schoolname">Name of School you represent</label><input type="text"
+                                                                                                       id="schoolname"
+                                                                                                       name="schoolname"
+                                                                                                       required/></div>
+            <div class="field-form"><label for="schooladdress">School Street Address</label><input type="text"
+                                                                                                   id="schooladdress"
+                                                                                                   name="schooladdress"
+                                                                                                   required/></div>
+            <div class="field-form"><label for="schoolphone">School Phone Number </label><input type="text"
+                                                                                                id="schoolphone"
+                                                                                                name="schoolphone"
+                                                                                                required/></div>
+            <div class="field-form"><label for="grade">Which grades will be participating?</label><input type="text"
+                                                                                                         id="grade"
+                                                                                                         name="grade"
+                                                                                                         required/>
+            </div>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
