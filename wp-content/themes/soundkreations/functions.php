@@ -771,6 +771,18 @@ function get_programs_by_location() {
         $output .= '</li>';
     endwhile;
     $output .= '</ul></section>';
+	
+	$output.="<script type=\"text/javascript\">
+
+            $(document).ready(function(){
+                   $('.program-name').click(function(){
+                    $(this).toggleClass('open');
+                    $(this).next('div').toggleClass('shown');
+                    $(this).parent().parent().toggleClass('expanded');
+                });
+            });
+
+        </script>";
 
     echo $output;
     exit;
