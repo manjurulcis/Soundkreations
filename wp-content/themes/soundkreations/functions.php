@@ -746,8 +746,8 @@ function get_programs_by_location() {
     );
     $query = new WP_Query($args);
 
-    $output = '<section class="program-list-container">';
-    $output .='<ul class="program-list">';
+    $output = '<section class="program-list-container"><ul class="program-list">';
+
     while ($query->have_posts()) : $query->the_post();
         $output .= '<li class="program">';
 
@@ -770,9 +770,7 @@ function get_programs_by_location() {
         $output .= '</div></div>';
         $output .= '</li>';
     endwhile;
-    $output .= '</ul>';
-    $output .='</section>';
-
+    $output .= '</ul></section>';
 
     echo $output;
     exit;

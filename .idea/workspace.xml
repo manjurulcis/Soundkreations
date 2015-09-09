@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="698548dd-20f7-49f0-a955-dbb50c512c8d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="82433455-cad7-453c-b1e1-416f856fbbf8" name="Failed commit: Default" comment="css changes" />
     <list id="3d8bcdea-c752-41b4-a0bf-100fa3dec0ca" name="Failed commit: Default (2)" comment="CSS Changes" />
@@ -42,14 +41,13 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2563238">
-              <caret line="772" column="23" selection-start-line="772" selection-start-column="23" selection-end-line="772" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.48735243">
+              <caret line="716" column="0" selection-start-line="716" selection-start-column="0" selection-end-line="716" selection-end-column="0" />
               <folding>
                 <element signature="e#11446#11693#0#HTML" expanded="false" />
                 <element signature="e#11729#13504#0#HTML" expanded="false" />
-                <marker date="1441828151999" expanded="true" signature="20168:20299" placeholder="..." />
-                <marker date="1441828151999" expanded="true" signature="25087:25104" placeholder="..." />
-                <marker date="1441828151999" expanded="true" signature="25087:25130" placeholder="..." />
+                <marker date="1441829087961" expanded="true" signature="20168:20299" placeholder="..." />
+                <marker date="1441829087961" expanded="true" signature="25087:25116" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -58,7 +56,7 @@
       <file leaf-file-name="functions - Copy.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions - Copy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="168" column="132" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="132" />
               <folding />
             </state>
@@ -78,8 +76,8 @@
       <file leaf-file-name="caorda-program-listing.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/shortcodes/caorda-program-listing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-48.51064">
-              <caret line="153" column="31" selection-start-line="130" selection-start-column="12" selection-end-line="153" selection-end-column="31" />
+            <state vertical-scroll-proportion="-16.170214">
+              <caret line="155" column="14" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -539,9 +537,8 @@
           <folding>
             <element signature="e#11446#11693#0#HTML" expanded="false" />
             <element signature="e#11729#13504#0#HTML" expanded="false" />
-            <marker date="1441828151999" expanded="true" signature="20168:20299" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25104" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25130" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="20168:20299" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="25087:25116" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -609,9 +606,8 @@
           <folding>
             <element signature="e#11446#11693#0#HTML" expanded="false" />
             <element signature="e#11729#13504#0#HTML" expanded="false" />
-            <marker date="1441828151999" expanded="true" signature="20168:20299" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25104" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25130" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="20168:20299" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="25087:25116" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -679,9 +675,8 @@
           <folding>
             <element signature="e#11446#11693#0#HTML" expanded="false" />
             <element signature="e#11729#13504#0#HTML" expanded="false" />
-            <marker date="1441828151999" expanded="true" signature="20168:20299" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25104" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25130" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="20168:20299" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="25087:25116" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -873,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions - Copy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="168" column="132" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="132" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/includes/client-list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9387755">
@@ -913,24 +900,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions - Copy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="132" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/shortcodes/caorda-program-listing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-48.51064">
-          <caret line="153" column="31" selection-start-line="130" selection-start-column="12" selection-end-line="153" selection-end-column="31" />
+        <state vertical-scroll-proportion="-16.170214">
+          <caret line="155" column="14" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/soundkreations/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2563238">
-          <caret line="772" column="23" selection-start-line="772" selection-start-column="23" selection-end-line="772" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.48735243">
+          <caret line="716" column="0" selection-start-line="716" selection-start-column="0" selection-end-line="716" selection-end-column="0" />
           <folding>
             <element signature="e#11446#11693#0#HTML" expanded="false" />
             <element signature="e#11729#13504#0#HTML" expanded="false" />
-            <marker date="1441828151999" expanded="true" signature="20168:20299" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25104" placeholder="..." />
-            <marker date="1441828151999" expanded="true" signature="25087:25130" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="20168:20299" placeholder="..." />
+            <marker date="1441829087961" expanded="true" signature="25087:25116" placeholder="..." />
           </folding>
         </state>
       </provider>
