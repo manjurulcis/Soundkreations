@@ -157,7 +157,7 @@ function build_your_program($atts)
 
         /*form styles*/
         #msform {
-            height: 550px;;
+            height: 650px;
             width: 1180px;
             margin: 50px auto;
             text-align: center;
@@ -170,7 +170,7 @@ function build_your_program($atts)
             border-radius: 3px;
             box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
             padding: 20px 30px;
-
+            height: 590px;
             box-sizing: border-box;
             width: 80%;
             margin: 0 10%;
@@ -178,8 +178,6 @@ function build_your_program($atts)
             /*stacking fieldsets above each other*/
             position: absolute;
         }
-
-
 
         /*Hide all except first fieldset*/
         #msform fieldset:not(:first-of-type) {
@@ -202,7 +200,7 @@ function build_your_program($atts)
         /*buttons*/
         #msform .action-button {
             width: 100px;
-            background: #27AE60;
+            background: #00a5e6;
             font-weight: bold;
             color: white;
             border: 0 none;
@@ -213,13 +211,12 @@ function build_your_program($atts)
         }
 
         #msform .action-button:hover, #msform .action-button:focus {
-            box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #00a5e6;
         }
 
         #msform fieldset .field-form input {
             width: 100%;
         }
-
 
         /*headings*/
         .fs-title {
@@ -256,16 +253,16 @@ function build_your_program($atts)
         }
 
         #progressbar li:before {
-            content: counter(step);
-            counter-increment: step;
-            width: 20px;
-            line-height: 20px;
-            display: block;
-            font-size: 10px;
+            background: white none repeat scroll 0 0;
+            border-radius: 15px;
             color: #333;
-            background: white;
-            border-radius: 3px;
-            margin: 0 auto 5px auto;
+            content: counter(step, decimal);
+            counter-increment: step;
+            display: block;
+            font-size: 12px;
+            line-height: 30px;
+            margin: 0 auto 5px;
+            width: 30px;
         }
 
         /*progressbar connectors*/
@@ -276,7 +273,7 @@ function build_your_program($atts)
             background: white;
             position: absolute;
             left: -50%;
-            top: 9px;
+            top: 17px;
             z-index: -1; /*put it behind the numbers*/
         }
 
@@ -288,41 +285,159 @@ function build_your_program($atts)
         /*marking active/completed steps green*/
         /*The number of the step and the connector before it = green*/
         #progressbar li.active:before, #progressbar li.active:after {
-            background: #27AE60;
+            background: #00a5e6;
             color: white;
         }
 
         .field-form label {
-            color: black;
+            color: #7d7c7d;
             display: block;
+
         }
 
         .field-form {
             margin: 0 auto 10px;
             text-align: center;
-            width: 70%;
+            width: 80%;
         }
 
-        .radio-input table {
-            border: none;
-            width: 300px;
+        .radio-input {
+            text-align: left !important;
 
         }
-        .radio-input label{
-            text-align: left;
+
+        .indi_input {
+            display: inline-block;
+            margin-right: -90px;
+            width: 25%;
         }
 
-        .radio-input input{
+        .indi_input .left {
+            float: left;
+            max-width: 60%;
+            margin-right: 10px;
+        }
+
+        /*Program Selection*/
+        .pg-interest {
+            max-width: 100%;
+
+        }
+
+        .field-form select{
             margin: 0 auto;
         }
 
-        .radio-input td{
-            width:100%;
+        .pg-interest h3 {
+            color: #7d7c7d;
+            font-size: 15px;
         }
 
+        .pg-interest .program-list li.program h3.program-name{
+            -webkit-background-size: 25px;
+            background-size: 25px;
+        }
+        .pg-interest ul {
+            list-style-type: none;
+            max-width: 100%;
+        }
 
+        .program-selection {
+            display: inline-flex;
+        }
 
+        .program-selection li {
+            width: 20%;
+        }
 
+        .indi-program {
+
+        }
+
+        .program-heading {
+            background: #3b3f3e;
+            margin-top: -3px;
+            height: 30px;
+
+        }
+
+        .program-heading h4 {
+            font-size: 15px;
+            color: white;
+            padding: 5px;
+
+        }
+
+        .program-body {
+            border-left: 3px solid #fbca04 !important;
+            border-right: 3px solid #fbca04 !important;
+
+        }
+
+        .program-body img {
+            margin-bottom: -7px;
+        }
+
+        .program-footer {
+            border: 3px solid #fbca04 !important;
+        }
+
+        .program-footer h4 {
+            font-size: 12px;
+            padding: 5px 0;
+        }
+
+        .areatitle {
+            max-width: 100%;
+            width: 39%;
+            margin: 0 auto;
+        }
+
+        .areatitle input {
+
+        }
+
+        .areatitle select {
+
+        }
+
+        #msform .getstart {
+            background: #00a5e6 none repeat scroll 0 0;
+            border: 0 none;
+            border-radius: 1px;
+            color: white;
+            cursor: pointer;
+            float: right;
+            font-weight: bold;
+            margin: 0.5px 4px 0 0;
+            padding: 8px 5px;
+            width: 90px;
+        }
+
+        .program-list li .program-inside {
+            padding: 0 10px !important;
+        }
+
+        .select-style {
+            border: 1px solid #ccc;
+            width: 120px;
+            border-radius: 3px;
+            overflow: hidden;
+            background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+        }
+        .select-style select {
+            padding: 5px 8px;
+            width: 130%;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+        }
+
+        .select-style select:focus {
+            outline: none;
+        }
     </style>
 
     <!-- multistep form -->
@@ -352,16 +467,22 @@ function build_your_program($atts)
             </div>
             <div class="field-form radio-input"><label for="pastclient">Past SK Client?</label>
 
-                <div>
-                    <div>
-                        <div></div>
-                        <div></div>
+                <div class="inputfields">
+                    <div class="indi_input">
+
+                        <div class="left"><input type="radio" name="pastclient" value="yes" checked></div>
+                        <div class="left"><label>Yes</label></div>
                     </div>
-                        <label>Yes</label><input type="radio" name="pastclient" value="yes" checked></>
-                        <td><label>No</label><input type="radio" name="pastclient" value="no"></td>
-                        <td><label>I don't know</label><input type="radio" name="pastclient" value="I don't know"></td>
-                    </tr>
-                </table>
+                    <div class="indi_input">
+
+                        <div class="left"><input type="radio" name="pastclient" value="no"></div>
+                        <div class="left"><label>No</label></div>
+                    </div>
+                    <div class="indi_input">
+                        <div class="left"><input type="radio" name="pastclient" value="I don't know"></div>
+                        <div class="left"><label>I don't know</label></div>
+                    </div>
+                </div>
             </div>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
@@ -369,42 +490,39 @@ function build_your_program($atts)
             <h3 class="fs-title">Step 2</h3>
 
             <h2 class="fs-subtitle">What type of Program are you interested in?</h2>
-            <select>
-                <optgroup label="Calgary Area ">
-                    <option value="">Hip?Hop Dance</option>
-                    <option value="">Step Dance</option>
-                    <option value="">West African Dance</option>
-                    <option value="">Around the World Dance 1</option>
-                    <option value="">Around the World Dance 2</option>
-                    <option value="">Beat Street Dance</option>
-                    <option value="">Zumba</option>
-                    <option value="">Bollywood Dance</option>
-                    <option value="">Latin Dance</option>
-                    <option value="">Yoga</option>
-                    <option value="">Slam Poetry</option>
-                </optgroup>
-                <optgroup label="Edmonton Area">
-                    <option value="">Hip?Hop Dance</option>
-                    <option value="">The California Program (Popping, Locking, Animation)</option>
-                    <option value="">The New York Program (House, Breaking)</option>
-                    <option value="">The Jamaica Program (Dancehall)</option>
-                    <option value="">The India Program</option>
-                    <option value="">Around the World (Dancehall, House, Locking)</option>
-                </optgroup>
-                <optgroup label="Other">
-                    <option value="">Hip-Hop Dance</option>
-                    <option value="">Step Dance</option>
-                    <option value="">West African Dance</option>
-                    <option value="">Around the World Dance 1</option>
-                    <option value="">Around the World Dance 2</option>
-                    <option value="">Beat Street Dance</option>
-                    <option value="">Zumba</option>
-                    <option value="">Bollywood Dance</option>
-                    <option value="">Latin Dance</option>
-                    <option value="">Yoga</option>
-                    <option value="">Slam Poetry</option>
-                </optgroup>
-            </select>
+
+            <div class="areatitle">
+                <input type="button" name="getstarted" class="getstart" value="Get Started">
+                <!--<select class="location">
+
+                    <option disabled selected>Choose your area</option>
+                    <option value="">Calgary Area</option>
+                    <option value="">Edmonton Area</option>
+                    <option value="">Other</option>
+                </select>-->
+                <?php
+                 wp_dropdown_categories( array(
+                    'show_option_all' => 'Choose your area',
+                    'taxonomy' => 'location',
+                    'name' => 'location',
+                    'orderby' => 'name',
+                    'selected' => '',
+                    'hierarchical' => false,
+                    'depth' => 3,
+                    'show_count' => false,
+                    'hide_empty' => false,
+                ) );
+                ?>
+
+                <div class="output"></div>
+            </div>
+            <!-- All Programs -->
+
+            <div class="pg-interest">
+                <h3 class="fs-title"><b>Please choose TWO</b></h3>
+
+            </div>
+
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
@@ -433,22 +551,29 @@ function build_your_program($atts)
                     <option>2 (additional charge of $375/day)</option>
                 </select>
             </div>
-
-
-            <input type="text" name="fname" placeholder="First Name"/>
-            <input type="text" name="lname" placeholder="Last Name"/>
-            <input type="text" name="phone" placeholder="Phone"/>
-            <textarea name="address" placeholder="Address"></textarea>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
         <fieldset>
-            <h2 class="fs-title">Social Profiles</h2>
+            <h2 class="fs-title">Step 4</h2>
 
-            <h3 class="fs-subtitle">Your presence on the social network</h3>
-            <input type="text" name="twitter" placeholder="Twitter"/>
-            <input type="text" name="facebook" placeholder="Facebook"/>
-            <input type="text" name="gplus" placeholder="Google Plus"/>
+            <h3 class="fs-subtitle">Date Selection</h3>
+            <div class="field-form radio-input"><label for="flexibledate">Are dates flexible?</label>
+                <div class="inputfields">
+                    <div class="indi_input">
+
+                        <div class="left"><input type="radio" name="pastclient" value="yes" checked></div>
+                        <div class="left"><label>Yes</label></div>
+                    </div>
+                    <div class="indi_input">
+
+                        <div class="left"><input type="radio" name="pastclient" value="no"></div>
+                        <div class="left"><label>No</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="field-form"><label>How many days are you interested in booking</label><input type="number" name="totaldates" /> </div>
+            <div class="field-form"><label>Choose your preferred dates:</label><input type="date" /> </div>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
@@ -474,17 +599,21 @@ function build_your_program($atts)
                                                                                                          name="grade"
                                                                                                          required/>
             </div>
+            <div class="field-form"><label for="numberofstd">How many students will be participating?</label><input
+                    type="text"
+                    id="numberofstd"
+                    name="numberofstd"
+                    required/>
+            </div>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="button" name="next" class="next action-button" value="Next"/>
         </fieldset>
         <fieldset>
-            <h2 class="fs-title">Personal Details</h2>
+            <h2 class="fs-title">Step 6</h2>
 
-            <h3 class="fs-subtitle">We will never sell it</h3>
-            <input type="text" name="fname" placeholder="First Name"/>
-            <input type="text" name="lname" placeholder="Last Name"/>
-            <input type="text" name="phone" placeholder="Phone"/>
-            <textarea name="address" placeholder="Address"></textarea>
+            <h3 class="fs-subtitle">Is there anything you'd like to tell us?</h3>
+            <textarea name="message"
+                      placeholder="Please enter any additional notes or messages you wish to pass on to SoundKreations"></textarea>
             <input type="button" name="previous" class="previous action-button" value="Previous"/>
             <input type="submit" name="submit" class="submit action-button" value="Submit"/>
         </fieldset>
@@ -576,6 +705,20 @@ function build_your_program($atts)
             return false;
         })
 
+        $('#location').change(function(){
+            jQuery.post(
+                '<?php echo get_bloginfo('url') ?>/wp-admin/admin-ajax.php',
+                {
+                    'action': 'get_programs_by_location',
+                    'location_id':   $('#location option:selected').val()
+                },
+                function(response){
+                    $('.pg-interest').html(response);
+
+                }
+            );
+        });
+
     </script>
     <?php
 
@@ -585,10 +728,52 @@ function build_your_program($atts)
 
 }
 
+add_action( 'wp_ajax_get_programs_by_location', 'get_programs_by_location' );
+add_action( 'wp_ajax_nopriv_get_programs_by_location', 'get_programs_by_location' );
 
-add_action('wp_ajax_get_currentRef', 'get_currentRef_callback');
-function get_currentRef_callback()
-{
-    echo "3";
-    exit();
+function get_programs_by_location() {
+    // Handle request then generate response using WP_Ajax_Response
+
+    $args = array(
+        'post_type' => 'program',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'location',
+                'field' => 'id',
+                'terms' => $_REQUEST['location_id'],
+            ),
+        ),
+    );
+    $query = new WP_Query($args);
+
+    $output = '<section class="program-list-container">';
+    $output .='<ul class="program-list">';
+    while ($query->have_posts()) : $query->the_post();
+        $output .= '<li class="program">';
+
+
+        $output .= '<h3 class="program-name">';
+        $output .= get_the_title();
+        $output .= '</h3>';
+
+        $output .= '<div class="program-container">';
+
+        if (has_post_thumbnail()) :
+            $output .= '<div class="program-image">';
+            $output .= get_the_post_thumbnail(get_the_ID(), 'full');
+            $output .= '</div>';
+        endif;
+        $output .= '<div class="program-description"><p>'.get_the_content().'</p>';
+        $output .= '</div>';
+        $output .= '<div class="program-read-more">';
+        $output .= '<a class="program-readmore" href="'.get_the_permalink().'">Read More</a>';
+        $output .= '</div></div>';
+        $output .= '</li>';
+    endwhile;
+    $output .= '</ul>';
+    $output .='</section>';
+
+
+    echo $output;
+    exit;
 }
